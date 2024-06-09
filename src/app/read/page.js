@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect} from 'react';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/utils/constant';
 
 function Read(){
 const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ useEffect(()=>{
 }, [])
 
 function deleteData(id){
-  fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`, {
+  fetch(`${API_BASE_URL}/${id}`, {
     method : "DELETE"
   })
   .then((result)=>{
@@ -29,7 +30,7 @@ function deleteData(id){
 }
 
 function readData(){
-  fetch("https://crud-app-next-js-eta.vercel.app/api")
+  fetch(API_BASE_URL)
   .then((result)=>{
     if(result.ok){
       return result.json()

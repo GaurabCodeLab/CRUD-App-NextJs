@@ -2,6 +2,7 @@
 import { useState, useEffect} from 'react';
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import { API_BASE_URL } from '@/utils/constant';
 
 function Update(context){
 const [name, setName] = useState("");
@@ -10,7 +11,7 @@ const router = useRouter();
 const id = context.params.id;
 
 useEffect(()=>{
-    fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`)
+    fetch(`${API_BASE_URL}/${id}`)
     .then((result)=>{
         if(result.ok){
             return result.json();
@@ -31,7 +32,7 @@ const data = {name, email};
     }
 
     function handleUpdate(){
-        fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`, {
+        fetch(`${API_BASE_URL}/${id}`, {
             method : "PUT",
             headers : {
                 "Content-Type" : "application/json"

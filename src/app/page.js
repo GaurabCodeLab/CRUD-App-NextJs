@@ -1,6 +1,7 @@
 "use client"
 import { useState} from 'react';
 import Link from "next/link";
+import { API_BASE_URL } from '@/utils/constant';
 
 function Create() {
 const [name, setName] = useState("");
@@ -12,7 +13,7 @@ const data = {name, email};
     }
     function handleClick(){
         if(name.trim() !== "" && email.trim() !== ""){
-            fetch("https://crud-app-next-js-eta.vercel.app/api", {
+            fetch(API_BASE_URL, {
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json",

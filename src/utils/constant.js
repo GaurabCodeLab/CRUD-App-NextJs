@@ -1,0 +1,1 @@
+export const API_BASE_URL = "https://crud-app-next-js-eta.vercel.app/api";
