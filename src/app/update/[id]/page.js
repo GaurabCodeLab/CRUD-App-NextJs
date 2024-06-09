@@ -10,7 +10,7 @@ const router = useRouter();
 const id = context.params.id;
 
 useEffect(()=>{
-    fetch(`http://localhost:3000/api/${id}`)
+    fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`)
     .then((result)=>{
         if(result.ok){
             return result.json();
@@ -31,7 +31,7 @@ const data = {name, email};
     }
 
     function handleUpdate(){
-        fetch(`http://localhost:3000/api/${id}`, {
+        fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`, {
             method : "PUT",
             headers : {
                 "Content-Type" : "application/json"

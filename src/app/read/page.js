@@ -11,7 +11,7 @@ useEffect(()=>{
 }, [])
 
 function deleteData(id){
-  fetch(`http://localhost:3000/api/${id}`, {
+  fetch(`https://crud-app-next-js-eta.vercel.app/api/${id}`, {
     method : "DELETE"
   })
   .then((result)=>{
@@ -29,7 +29,7 @@ function deleteData(id){
 }
 
 function readData(){
-  fetch("http://localhost:3000/api")
+  fetch("https://crud-app-next-js-eta.vercel.app/api")
   .then((result)=>{
     if(result.ok){
       return result.json()

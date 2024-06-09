@@ -12,7 +12,7 @@ const data = {name, email};
     }
     function handleClick(){
         if(name.trim() !== "" && email.trim() !== ""){
-            fetch("http://localhost:3000/api", {
+            fetch("https://crud-app-next-js-eta.vercel.app/api", {
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json",
